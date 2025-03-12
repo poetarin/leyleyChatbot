@@ -102,6 +102,12 @@ async function onMessage (message) {
       chat_id:message.chat.id,
       text:startMsg,
     })
+  } else if (message.text === '/about') {
+    let aboutMsg = "Andy is a bartender working at Leyley's private bar, that' all.";
+    return sendMessage({
+      chat_id: message.chat.id,
+      text: aboutMsg,
+    });
   }
   if(message.chat.id.toString() === ADMIN_UID){
     if(!message?.reply_to_message?.chat){
